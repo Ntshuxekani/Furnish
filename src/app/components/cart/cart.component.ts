@@ -44,6 +44,7 @@ export class CartComponent implements OnInit {
 
   
   addToCart(product: any) {
+  
     this.products.push(product);
   }
 
