@@ -14,6 +14,7 @@ import {  HttpClientModule } from '@angular/common/http';
 import { CheckoutService } from './services/checkout/checkout.service';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { loginComponent } from './components/login/login.component';
+import { PaymentComponent } from './components/payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { loginComponent } from './components/login/login.component';
     CartComponent,
     CheckoutComponent,
     registerComponent,
-    SucessComponent
+    SucessComponent,
+    PaymentComponent
   
 
   ],

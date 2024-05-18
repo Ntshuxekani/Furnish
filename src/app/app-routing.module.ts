@@ -7,6 +7,7 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import { RouterModule, Routes } from '@angular/router';
 import { loginComponent } from './components/login/login.component';
 import { registerComponent } from './components/register/register.component';
+import { PaymentComponent } from './components/payment/payment.component';
 
 const Routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -17,6 +18,7 @@ const Routes: Routes = [
   { path: 'login', component: loginComponent },
   { path: 'register', component: registerComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'payment', component: PaymentComponent },
 ];
 
 @NgModule({

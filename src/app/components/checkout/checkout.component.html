@@ -33,7 +33,7 @@
 
             <input type="radio" id="card" name="method" value="card" [(ngModel)]="selectedMethod" required=""> 
             <label for="card" class="method-label">Card</label>  
-            <button class="checkbtn" (click)="checkout()" [disabled]="includeDelivery && !isAddressValid() || !selectedMethod">CheckOut</button>
+            <button class="checkbtn" (click)="checkout()" [disabled]="includeDelivery && !isAddressValid() || !selectedMethod" routerLink="/payment" >CheckOut</button>
     <app-sucess *ngIf="successMessage" [orderNumber]="orderNumber"
     [includeDelivery]="includeDelivery"></app-sucess>
        
