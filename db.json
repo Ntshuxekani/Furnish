@@ -333,12 +333,23 @@
       "password": "123",
       "cPassword": "123",
       "id": "BBhp-L7"
+    },
+    {
+      "id": "53c9",
+      "email": "ntshuxekani.zitha90@gmail.com",
+      "password": "12345",
+      "cPassword": "12345"
+    },
+    {
+      "id": "ff1b",
+      "email": "sfundo@gmail.com",
+      "password": "123@sfundo",
+      "cPassword": "123@sfundo"
     }
   ],
-
   "products": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Sweet Dreams set",
       "price2": 4999.99,
       "price": 3500,
@@ -347,7 +358,7 @@
       "description": "The Sweet Dreams set offers unparalleled comfort and style for your bedroom. With its sleek design and high-quality materials, it's the perfect choice for a good night's sleep."
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "New Dawn",
       "price2": 3700,
       "price": 2999,
@@ -356,7 +367,7 @@
       "description": "Embrace the New Dawn with this elegant piece of furniture. Its modern design and comfortable features make it a great addition to any living space."
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Dreams bed",
       "price2": 5000,
       "price": 4000.99,
@@ -365,7 +376,7 @@
       "description": "Experience luxury with the Dreams bed. Its plush upholstery and sturdy construction ensure a restful night's sleep every time."
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "Comfy Sleep",
       "price2": 3300,
       "price": 2700,
@@ -374,7 +385,7 @@
       "description": "Sink into the Comfy Sleep chair and experience ultimate relaxation. Its ergonomic design and soft cushions provide unparalleled comfort."
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "green velvet",
       "price2": 899.99,
       "price": 1000,
@@ -383,7 +394,7 @@
       "description": "Add a touch of elegance to your home with chair 1. Its stylish design and premium materials make it a versatile choice for any room."
     },
     {
-      "id": 6,
+      "id": "6",
       "title": "grey mid",
       "price2": 799.99,
       "price": 999.99,
@@ -392,7 +403,7 @@
       "description": "Enhance your comfort with chair 2. Its contemporary design and plush cushions provide a cozy spot for relaxation."
     },
     {
-      "id": 7,
+      "id": "7",
       "title": "upholstered modern",
       "price2": 1500,
       "price": 899,
@@ -401,7 +412,7 @@
       "description": "Indulge in luxury with chair 3. Its sleek silhouette and premium upholstery make it a stylish addition to any home."
     },
     {
-      "id": 8,
+      "id": "8",
       "title": "tobacco brown",
       "price2": 999,
       "price": 699.99,
@@ -410,11 +421,9 @@
       "description": "Experience comfort like never before with chair 4. Its ergonomic design and durable construction ensure years of enjoyment."
     }
   ],
-
-  "cartItems" : [
+  "cartItems": [
     {
-      
+      "id": "38a3"
     }
-
   ]
 }
