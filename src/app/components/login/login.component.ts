@@ -50,7 +50,7 @@ import { AuthService } from 'src/app/services/checkout/authantication/auth.servi
             this.isLoggedIn = true;
             this.authService.login(this.loggedInEmail);
             
-            this.router.navigate(["/home"])
+            this.router.navigate(["/products"])
           }
           else
           {
