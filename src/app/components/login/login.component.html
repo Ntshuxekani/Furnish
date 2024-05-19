@@ -1,25 +1,37 @@
-
 <div class="container">
   <h2>Welcome to FurnishUp!!</h2>
-    <div class="logo">
-      <img src="assets/1.jpg" alt="">
+  <div class="logo">
+    <img src="assets/1.jpg" alt="" />
+  </div>
+
+  <form [formGroup]="LoginForm" (ngSubmit)="login()">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label"></label>
+      <input
+        type="email"
+        formControlName="email"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Enter your email account"
+        required
+      />
     </div>
-
-    <form  [formGroup]="LoginForm" (ngSubmit)="login()">
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label" ></label>
-          <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your email account">
-       
-        </div>
-        <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label"></label>
-          <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1" placeholder="Enter your password">
-        </div>
-        <button type="submit" class="btn btn-primary" routerLink="/products">Login</button>
-        <p>Do not have an account? <a routerLink="/register">Register</a></p>
-        <a routerLink="/home">
-          <i class="bi bi-arrow-left"></i> Back to Home
-      </a>
-
-      </form>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label"></label>
+      <input
+  
+        type="password"
+        formControlName="password"
+        class="form-control"
+        id="exampleInputPassword1"
+        placeholder="Enter your password"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary" routerLink="/login">
+      Login
+    </button>
+    <p>Do not have an account? <a routerLink="/register">Register</a></p>
+    <a routerLink="/home"> <i class="bi bi-arrow-left"></i> Back to Home </a>
+  </form>
 </div>
