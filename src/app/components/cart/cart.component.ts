@@ -36,19 +36,16 @@ export class CartComponent implements OnInit {
 
       this.router.navigate(['/login']);
     }
-    
     // this.subTotal = this.cartService.getTotalPrice();
-    
-    
   }
 
   
   addToCart(product: any) {
-  
     this.products.push(product);
   }
 
   getCart() {
+    
     return this.products;
   }
 
@@ -67,7 +64,6 @@ export class CartComponent implements OnInit {
     item.quantity++;
     this.updateTotal();
     // this.updateTotalQuantity()
-    
   }
 
   decreaseQuantity(item: { quantity: number }) {
@@ -75,7 +71,6 @@ export class CartComponent implements OnInit {
       item.quantity--;
       this.updateTotal();
       // this.updateTotalQuantity()
-      
     }
   }
 

@@ -5,14 +5,14 @@
       <!-- Main Card contains the shopping cart features and its options -->
       <div class="mainCard">
         <div class="cartHeading">
-            <h2>Your Cart</h2>
-            <h3>Items</h3>
+          <h2>Your Cart</h2>
+          <h3>Items</h3>
         </div>
         <hr>
         <ul class="cartDescrip">
-            <li>Product Details</li>
-            <li>Quantity</li>
-            <li>Total Price</li>
+          <li>Product Details</li>
+          <li>Quantity</li>
+          <li>Total Price</li>
         </ul>
         <!-- Products Articles -->
         <div class="row gy-3 mb-4 pArt" *ngFor="let product of products">
@@ -20,7 +20,7 @@
             <div class="card mb-3 product">
               <div class="row g-0">
                 <div class="col-md-4 ">
-                  <img [src]="product.image"  alt="...">
+                  <img [src]="product.image" alt="...">
                 </div>
                 <div class="col-md-8">
                   <div class="card-body">
@@ -33,24 +33,25 @@
           <!-- Quantity -->
           <div class="col-auto quantity">
             <button class="minus" (click)="decreaseQuantity(product)" aria-label="Decrease">&minus;</button>
-            <input type="number" [(ngModel)]="product.quantity" (change)="updateTotal()" class="input-box" value="1" min="1" max="10">
+            <input type="number" [(ngModel)]="product.quantity" (change)="updateTotal()" class="input-box" value="1"
+              min="1" max="10">
             <button class="plus" (click)="increaseQuantity(product)" aria-label="Increase">&plus;</button>
           </div>
 
-          <!-- Price -->
-          <!-- <div class="col-lg-2 col-sm-4 col-6  price">
-              <p class="fprice">{{product.price2}} </p> 
-          </div> -->
+
           <div class="col-lg-2 col-sm-4 col-6 cartDescrip">
             <p class="fprice">{{product.price}}</p>
           </div>
           <!-- Remove -->
           <div class="col-lg col-sm-4 remove">
             <div class="float-lg-end">
-              <a href="#" class="btn btn-light text-danger" routerLink="/cart"  (click)="removeItem(product)"> 
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                  <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
-                  <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+              <a href="#" class="btn btn-light text-danger" routerLink="/cart" (click)="removeItem(product)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash"
+                  viewBox="0 0 16 16">
+                  <path
+                    d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
+                  <path
+                    d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
                 </svg>
               </a>
             </div>
@@ -59,51 +60,46 @@
         <a href="#" class="btn btn-warning sMore w-50" routerLink="/products"> See More Products </a>
       </div>
     </div>
-    
-    
-      
-        <!-- Order Summary section -->
-      <div class="col-lg-3 oSum">
-        <div class="oCart">
-          <h3>Order Summary</h3>
-          <hr>
-         </div>
-       <div class="card mb-3 promoCard">
-         <div class="card-body">
-           <form>
-             <div class="form-group">
-               <label class="form-label">Promo Code</label>
-               <div class="input-group">
-                 <input type="text" class="form-control" name="" placeholder="Enter Code">
-                 <button class="btn btn-dark">Apply Code</button>
-               </div>
-             </div>
-           </form>
-         </div>
-       </div> <!-- card.// -->
-      
-       <!-- Amount container -->
-       <div class="card totalCard">
-       <div class="card-body">
-         <dl class="dlist-align">
-           <dt>Total Amount:</dt>
-           <dd >R {{subTotal}} </dd>
-         </dl>
-         <div class="d-grid gap-2 my-3">
-           <a href="#" class="btn btn-warning w-100" routerLink="/checkout"> Place Order </a>
-           <a href="#" class="btn btn-light w-100" routerLink="/home"> Cancel Order </a>
-         </div>
-       </div> 
-       </div> 
-      </div> 
-      
+
+
+
+    <!-- Order Summary section -->
+    <div class="col-lg-3 oSum">
+      <div class="oCart">
+        <h3>Order Summary</h3>
+        <hr>
+      </div>
+      <div class="card mb-3 promoCard">
+        <div class="card-body">
+          <form>
+            <div class="form-group">
+              <label class="form-label">Promo Code</label>
+              <div class="input-group">
+                <input type="text" class="form-control" name="" placeholder="Enter Code">
+                <button class="btn btn-dark">Apply Code</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div> <!-- card.// -->
+
+      <!-- Amount container -->
+      <div class="card totalCard">
+        <div class="card-body">
+          <dl class="dlist-align">
+            <dt>Sub-Total:</dt>
+            <dd>R {{subTotal}} </dd>
+            <dt>Delivery Fee:</dt>
+            <dd>Free</dd>
+            <dt>Total:</dt>
+            <dd>R {{subTotal}} </dd>
+          </dl>
+          <div class="d-grid gap-2 my-3">
+            <a href="#" class="btn btn-warning w-100" routerLink="/checkout"> Place Order </a>
+            <a href="#" class="btn btn-light w-100" routerLink="/home"> Cancel Order </a>
+          </div>
+        </div>
+      </div>
     </div>
-  
-    
-  
- 
+  </div>
 </div>
-
-
-
-

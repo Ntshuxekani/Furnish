@@ -14,6 +14,7 @@ export class AuthService {
     localStorage.setItem('loggedInEmail', email);
   }
 
+  
   logout(): void {
     this.loggedIn = false;
     this.loggedInEmail = '';

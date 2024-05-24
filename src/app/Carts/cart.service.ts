@@ -18,13 +18,21 @@ export class CartService {
   constructor( private http : HttpClient){}
   
  
-  getCart(){
-    return this.cart
+  getCart() {
+    const cartItems = localStorage.getItem("cartItems");
+    this.cart = cartItems ? JSON.parse(cartItems) : [];
+    return this.cart;
   }
 
   getCartItemCount() {
     return this.cartItemCount;
   }
+
+
+  // getCart() {
+  //   var cartItems = localStorage.getItem("cartItems");
+  //   return cartItems ? JSON.parse(cartItems) : [];
+  // }
 
   // ADD TO CART BUTTON
   addTocart(product:any){
@@ -39,12 +47,10 @@ export class CartService {
     if (!added) {
       product.quantity = 1;
       this.cart.push(product);
+      localStorage.setItem('cartItems', JSON.stringify(this.cart));
     }
     
       this.cartItemCount.next(this.cartItemCount.value + 1);
-  
-    
-
   }
 
   

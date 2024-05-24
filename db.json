@@ -10,6 +10,12 @@
       "email": "sfundo@gmail.com",
       "password": "123@sfundo",
       "cPassword": "123@sfundo"
+    },
+    {
+      "email": "jane@gmail.com",
+      "password": "janedoe",
+      "cPassword": "janedoe",
+      "id": "cXo6l6k"
     }
   ],
   "products": [
