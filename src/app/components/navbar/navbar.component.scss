@@ -5,6 +5,9 @@ nav{
   height: 120px;
   width: 100%;
   background-color: var(--primary-color);
+  position: fixed;
+  z-index: 9999;
+  margin-top: 0;
 
   img{
     width: 150px;
@@ -16,7 +19,7 @@ nav{
     margin: 1.5rem;
     list-style-type: none;
     display: flex;
-    gap: 1.5rem;
+    gap: 3rem;
     margin-right: 3rem;
 
     a{
@@ -26,10 +29,22 @@ nav{
       li{
         font-size: large;
         font-weight: 800;
+
+        i{
+          position: relative;
+          font-size: larger;
+        }
+
+        span{
+          position: absolute;
+          bottom: 0.5rem;
+        }
       }
     }
 
-    
+    a:hover{
+      color: rgb(254, 211, 131);
+    }
 
     .login-btn{
       background-color: rgb(240, 240, 240);
@@ -45,6 +60,7 @@ nav{
 
     .login-btn:hover{
       background-color: rgb(215, 215, 215);
+      color: rgb(122, 122, 122);
     }
 
   }

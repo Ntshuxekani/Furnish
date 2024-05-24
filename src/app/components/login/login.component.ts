@@ -4,7 +4,6 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/checkout/authantication/auth.service';
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -50,7 +49,7 @@ import { AuthService } from 'src/app/services/checkout/authantication/auth.servi
             this.isLoggedIn = true;
             this.authService.login(this.loggedInEmail);
             
-            this.router.navigate(["/products"])
+            this.router.navigate(["/cart"])
           }
           else
           {
