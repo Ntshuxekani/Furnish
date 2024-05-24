@@ -1,0 +1,57 @@
+
+<footer class="footer">
+    <div class="footer-content">
+      <div class="links">
+        <a href="https://facebook.com" target="_blank">Facebook</a>
+        <a href="https://twitter.com" target="_blank">Twitter</a>
+        <a href="https://instagram.com" target="_blank">Instagram</a>
+        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        <a href="#" (click)="openModal($event)">Contact Us</a>
+      </div>
+    </div>
+  
+    <!-- Contact Us Modal -->
+    <div class="modal" [class.show]="isModalOpen">
+      <div class="modal-content">
+        <span class="close" (click)="closeModal()">&times;</span>
+        <h3>Contact Us</h3>
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+          <div>
+            <label for="name">Name:</label>
+            <input id="name" formControlName="name" placeholder="Enter your name">
+            <div *ngIf="contactForm.controls.name.invalid && (contactForm.controls.name.dirty || contactForm.controls.name.touched)">
+              <small *ngIf="contactForm.controls.name.errors?.required">Name is required.</small>
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input id="email" formControlName="email" placeholder="Enter your email">
+            <div *ngIf="contactForm.controls.email.invalid && (contactForm.controls.email.dirty || contactForm.controls.email.touched)">
+              <small *ngIf="contactForm.controls.email.errors?.required">Email is required.</small>
+              <small *ngIf="contactForm.controls.email.errors?.email">Invalid email address.</small>
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" formControlName="message" placeholder="Enter your message"></textarea>
+            <div *ngIf="contactForm.controls.message.invalid && (contactForm.controls.message.dirty || contactForm.controls.message.touched)">
+              <small *ngIf="contactForm.controls.message.errors?.required">Message is required.</small>
+            </div>
+          </div>
+  
+          <button type="submit" [disabled]="contactForm.invalid">Submit</button>
+        </form>
+      </div>
+    </div>
+<!-- Thank You Modal -->
+<div class="modal" [class.show]="isThankYouModalOpen">
+    <div class="modal-content">
+      <span class="close" (click)="closeThankYouModal()">&times;</span>
+      <h3>Thank You</h3>
+      <p>Thank you for contacting us. Our agents will call you back shortly.</p>
+    </div>
+  </div>
+
+  </footer>
