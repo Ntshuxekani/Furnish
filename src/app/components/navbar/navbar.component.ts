@@ -10,6 +10,7 @@ import { AuthService } from 'src/app/services/checkout/authantication/auth.servi
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent  implements OnInit{
+
 navigateHome() {
 throw new Error('Method not implemented.');
 }
