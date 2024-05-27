@@ -23,9 +23,10 @@ throw new Error('Method not implemented.');
   
 
   ngOnInit() {
-    this.cartService.getCartItemCount().subscribe((count: number) => {
-      this.cartItemCount = count;
-     });
+    // this.cartService.getCartItemCount().subscribe((count: number) => {
+    //   this.cartItemCount = count;
+    //  });
+    this.cartItemCount = this.cartService.getCartItemCount();
      this.isLoggedIn = this.authService.getIsLoggedIn();
 
    

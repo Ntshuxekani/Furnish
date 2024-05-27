@@ -15,6 +15,7 @@ import { CheckoutService } from './services/checkout/checkout.service';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { loginComponent } from './components/login/login.component';
 import { PaymentComponent } from './components/payment/payment.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -30,9 +31,8 @@ import { PaymentComponent } from './components/payment/payment.component';
     CheckoutComponent,
     registerComponent,
     SucessComponent,
-    PaymentComponent
-  
-
+    PaymentComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

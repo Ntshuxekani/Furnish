@@ -25,7 +25,7 @@ export class CartService {
   }
 
   getCartItemCount() {
-    return this.cartItemCount;
+    return this.cart.length;
   }
 
 

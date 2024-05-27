@@ -1,81 +1,127 @@
 *{
-    box-sizing: border-box;
-    list-style: none;
     font-family: "Roboto Condensed";
-    padding: 0;
 }
 
 .container{
-    margin-top: 120px;
+    margin-top: 140px;
 }
 
-.cartHeading{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+// .cartHeading{
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
    
     
     
-}
-.cartDescrip{
+// }
+// .cartDescrip{
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: space-between;
+//     align-items: center;
+//     padding-left: 20px;
+// }
+
+// .pArt{
+//     display: flex;
+    
+    
+// }
+
+// li{
+//     margin-left: 50px;
+//     margin-right: 60px;
+// }
+
+// .product{
+//     max-width: 300px;
+// }
+
+// img{
+//     width: 100px;
+//     height: 110px;
+// }
+
+
+// .quantity{
+//     margin-top: 50px;
+//     padding-right: 70px;
+    
+// }
+
+// .fprice{
+//     // display: flex;
+//     // justify-content: space-between;
+//     display: flex;
+//     flex-direction: row;
+//     justify-content:space-between;
+//     align-items: center;
+//     padding-left: 20px;
+//     margin-right: 60px;
+// }
+
+// .oSum{
+//     margin-top: 12px;
+// }
+
+// h3{
+//     justify-content: center;
+//     display: flex;
+//     align-items: center;
+// }
+
+// .sMore{
+//     margin-bottom: 20px;
+// }
+// .space{
+//     padding-top: 100px;
+// }
+
+/* Adjust the alignment of the cart description titles */
+.cartDescrip {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    padding-left: 20px;
-}
-
-.pArt{
-    display: flex;
-    
-    
-}
-
-li{
-    margin-left: 50px;
-    margin-right: 60px;
-}
-
-.product{
-    max-width: 300px;
-}
-
-img{
-    width: 100px;
-    height: 110px;
-}
-
-
-.quantity{
-    margin-top: 50px;
-    padding-right: 70px;
-    
-}
-
-.fprice{
-    // display: flex;
-    // justify-content: space-between;
-    display: flex;
-    flex-direction: row;
-    justify-content:space-between;
-    align-items: center;
-    padding-left: 20px;
-    margin-right: 60px;
-}
-
-.oSum{
-    margin-top: 12px;
-}
-
-h3{
-    justify-content: center;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .cartDescrip li {
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  /* Ensure the product image is responsive */
+  .product img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Align the quantity controls */
+  .quantity {
     display: flex;
     align-items: center;
-}
+    margin-left: 6rem;
+  }
+  
+  .quantity .input-box {
+    width: 60px;
+    text-align: center;
+  }
+  
+  /* Align the price and remove button */
+  .price{
+    margin-left: 3rem;
+  }
 
-.sMore{
-    margin-bottom: 20px;
-}
-.space{
-    padding-top: 100px;
-}
+  .fprice {
+    margin-bottom: 0;
+  }
+  
+  .remove {
+    text-align: right;
+  }
+
+  .price-title{
+    margin-right: 9rem;
+  }
+  
