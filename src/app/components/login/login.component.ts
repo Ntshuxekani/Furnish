@@ -30,7 +30,7 @@ import { AuthService } from 'src/app/services/checkout/authantication/auth.servi
   
       login()
       {
-        this.http.get<any>("http://localhost:3000/registerUsersList/").subscribe(res=>{
+        this.http.get<any>("localhost:8080/api/auth/login").subscribe(res=>{
            const user = res.find((details:any)=>
           {
             return details.email === this.LoginForm.value.email && details.password === this.LoginForm.value.password;

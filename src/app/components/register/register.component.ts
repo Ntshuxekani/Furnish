@@ -13,7 +13,7 @@ export class registerComponent {
  
   //signup will be a formgroup object
   public Register !: FormGroup
- api="http://localhost:3000/registerUsersList/"
+ api="http://localhost:8080/api/auth/login"
   constructor( private formbuilder: FormBuilder,private http: HttpClient, private router: Router){}
 
   ngOnInit():void

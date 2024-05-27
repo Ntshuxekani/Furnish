@@ -3,6 +3,7 @@ img{
     width: 40wh;
     border-radius: 50%;
     margin: auto;
+    margin-top: 0;
 }
 .logo
 {
@@ -12,13 +13,43 @@ img{
     margin-top: 20px;
 }
 .btn{
-    background-color: blue;
+    background-color: transparent;
+    color: var(--primary-color);
+   margin-left: 41%;
+   border: 3px solid var(--primary-color);
+   padding: 10px 40px 10px 40px;
+   font-weight: bolder;
 }
+
 .container{
-    background-color:orange;
-     width: 200vh;
-     padding: 50px;
-     margin: 20px;
-   
+    background-color:white;
+     width: 40%;
+     height:780px;
+     overflow: hidden;
+     padding:20px;
+     padding-top: 0;
+     margin: auto;
+     border-radius: 17px;
+    border:1px solid;
+    margin-top:10px;
    }
+   input {
+    font-weight: 100;
+    color: #f74a05;
+    background-color: rgb(246, 244, 244);
+   }
+
+label{
+    color: rgb(139, 139, 139);
+}
    
+
+.links{
+    justify-self: flex-end;
+    margin-top: 2rem;
+}
+
+a{
+    color: var(--primary-color);
+    
+}

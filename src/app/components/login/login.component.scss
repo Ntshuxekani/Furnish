@@ -16,15 +16,51 @@ img{
   
 }
 .container{
- background-color:orange;
-  width: 30vw;
-  padding: 20px;
-  margin: auto;
-  justify-content: center;
-  text-align: center;
-  margin-top: 70px;
+    background-color:white;
+    border-radius: 17px;
+    border:1px solid;
+     width: 30%;
+     height: fit-content;
+     overflow: hidden;
+     padding:20px;
+     padding-top: 0;
+     margin: auto;
+     border-radius: 17px;
+   
 
 }
+
 h2{
    text-align: center;
+   color: orange;
 }
+
+button{
+    background-color: transparent;
+    color: var(--primary-color);
+   margin-left: 41%;
+   border: 3px solid var(--primary-color);
+   padding: 10px 40px 10px 40px;
+   font-weight: bolder;
+}
+
+label{
+    color: rgb(139, 139, 139);
+}
+   
+
+.links{
+    justify-self: flex-end;
+    margin-top: 2rem;
+}
+
+a{
+    color: var(--primary-color);
+    
+}
+
+input {
+    font-weight: 100;
+    color: #f74a05;
+    background-color: rgb(246, 244, 244);
+   }
