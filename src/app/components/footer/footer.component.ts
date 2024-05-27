@@ -45,6 +45,7 @@ isThankYouModalOpen: any;
       this.contactForm.reset(); // Reset the form here
       this.closeModal(); // Close the modal after submission
       this.openThankYouModal(); // Open the thank you modal
+      setTimeout(() => this.closeThankYouModal(), 3000); // Close thank you modal after 3 seconds
     }
   }
 
