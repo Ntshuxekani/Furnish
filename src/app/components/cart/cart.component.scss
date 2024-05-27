@@ -1,8 +1,8 @@
-*{
+* {
     font-family: "Roboto Condensed";
 }
 
-.container{
+.container {
     margin-top: 140px;
 }
 
@@ -10,9 +10,9 @@
 //     display: flex;
 //     justify-content: space-between;
 //     align-items: center;
-   
-    
-    
+
+
+
 // }
 // .cartDescrip{
 //     display: flex;
@@ -24,8 +24,8 @@
 
 // .pArt{
 //     display: flex;
-    
-    
+
+
 // }
 
 // li{
@@ -46,7 +46,7 @@
 // .quantity{
 //     margin-top: 50px;
 //     padding-right: 70px;
-    
+
 // }
 
 // .fprice{
@@ -77,51 +77,46 @@
 //     padding-top: 100px;
 // }
 
-/* Adjust the alignment of the cart description titles */
 .cartDescrip {
     display: flex;
     justify-content: space-between;
     list-style: none;
     padding: 0;
-  }
-  
-  .cartDescrip li {
+}
+
+.cartDescrip li {
     text-align: center;
     font-weight: bold;
-  }
-  
-  /* Ensure the product image is responsive */
-  .product img {
+}
+
+.product img {
     max-width: 100%;
     height: auto;
-  }
-  
-  /* Align the quantity controls */
-  .quantity {
+}
+
+.quantity {
     display: flex;
     align-items: center;
     margin-left: 6rem;
-  }
-  
-  .quantity .input-box {
+}
+
+.quantity .input-box {
     width: 60px;
     text-align: center;
-  }
-  
-  /* Align the price and remove button */
-  .price{
+}
+
+.price {
     margin-left: 3rem;
-  }
+}
 
-  .fprice {
+.fprice {
     margin-bottom: 0;
-  }
-  
-  .remove {
-    text-align: right;
-  }
+}
 
-  .price-title{
+.remove {
+    text-align: right;
+}
+
+.price-title {
     margin-right: 9rem;
-  }
-  
+}
