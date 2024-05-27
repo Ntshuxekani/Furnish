@@ -7,19 +7,21 @@
 
     <form  [formGroup]="LoginForm" (ngSubmit)="login()">
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label" ></label>
-          <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your email account">
+          <label for="exampleInputEmail1" class="form-label" >username</label>
+          <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your username">
        
         </div>
         <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label"></label>
+          <label for="exampleInputPassword1" class="form-label">Password</label>
           <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1" placeholder="Enter your password">
         </div>
         <button type="submit" class="btn btn-primary" routerLink="/login">Login</button>
+       <div class="links">
         <p>Do not have an account? <a routerLink="/register">Register</a></p>
         <a routerLink="/home">
           <i class="bi bi-arrow-left"></i> Back to Home
       </a>
+       </div>
 
       </form>
 </div>
