@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/checkout/authantication/auth.service';
+import { StorageService } from 'src/app/storage.service';
 
 @Component({
   selector: 'app-login',
@@ -11,58 +12,44 @@ import { AuthService } from 'src/app/services/checkout/authantication/auth.servi
 })
 
   export class loginComponent {
-    public LoginForm !:FormGroup
-    public isLoggedIn: boolean = false;
-    public loggedInEmail: string = '';
-    
-
-    constructor(private formbuilder:FormBuilder, 
-      private http: HttpClient,
-       private router:Router,
-       private authService: AuthService){}
+    form: any = {
+      username: null,
+      password: null
+    };
+    isLoggedIn = false;
+    isLoginFailed = false;
+    errorMessage = '';
+    roles: string[] = [];
   
-    ngOnInit():void
-    {// this is the formcontrol as it hold both the data value and the valitator
-      this.LoginForm = this.formbuilder.group({
-        email: ['',Validators.required],
-        password: ['', Validators.required]
-      })}
+    constructor(private authService: AuthService, private storageService: StorageService) { }
   
-      login()
-      {
-        this.http.get<any>("localhost:8080/api/auth/login").subscribe(res=>{
-           const user = res.find((details:any)=>
-          {
-            return details.email === this.LoginForm.value.email && details.password === this.LoginForm.value.password;
-            
-          });
-
-          console.log(this.LoginForm);
-          console.log(this.LoginForm);
-
-
-          
-          if(user)
-          {
-            alert('Successfully Logged in');
-            this.loggedInEmail = this.LoginForm.value.email;
-            this.isLoggedIn = true;
-            this.authService.login(this.loggedInEmail);
-            
-            this.router.navigate(["/cart"])
-          }
-          else
-          {
-            alert("User not found")
-          }
-        },err=>
-        {
-          alert("Something went wrong");
-        })
+    ngOnInit(): void {
+      if (this.storageService.isLoggedIn()) {
+        this.isLoggedIn = true;
+        this.roles = this.storageService.getUser().roles;
       }
+    }
+  
+    onSubmit(): void {
+      const { username, password } = this.form;
+  
+      this.authService.login(username, password).subscribe({
+        next: data => {
+          this.storageService.saveUser(data);
+  
+          this.isLoginFailed = false;
+          this.isLoggedIn = true;
+          this.roles = this.storageService.getUser().roles;
+          this.reloadPage();
+        },
+        error: err => {
+          this.errorMessage = err.error.message;
+          this.isLoginFailed = true;
+        }
+      });
+    }
 
-         
+    reloadPage(): void {
+      window.location.reload();
+    }
   }
-
-
-

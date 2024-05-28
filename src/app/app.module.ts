@@ -16,6 +16,11 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { loginComponent } from './components/login/login.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
+import { SupplierDashboardComponent } from './components/supplier-dashboard/supplier-dashboard.component';
+import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
+import { httpInterceptorProviders } from './util/http.intercerptors';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +38,7 @@ import { FooterComponent } from './components/footer/footer.component';
     SucessComponent,
     PaymentComponent,
     FooterComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +47,7 @@ import { FooterComponent } from './components/footer/footer.component';
     HttpClientModule,
    FormsModule
   ],
-  providers: [CheckoutService],
+  providers: [CheckoutService,httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
