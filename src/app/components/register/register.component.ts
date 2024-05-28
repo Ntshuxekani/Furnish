@@ -46,7 +46,7 @@ export class registerComponent {
       alert('sign up successful');
       //the navigator method accepts an array of route as an argument
       this.Register.reset()
-      this.router.navigate(["/products"])
+      this.router.navigate(["/home"])
     },error=>{
         alert("something went wrong");
 
