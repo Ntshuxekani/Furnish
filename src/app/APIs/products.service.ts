@@ -11,7 +11,7 @@ export class ProductsService {
 
   // products : any[] =[]
 
-  private apiUrl = 'http://localhost:3000/products';
+  private apiUrl = 'http://localhost:8080/api/FurnishUp/products';
 
   constructor(private http: HttpClient){}
   
