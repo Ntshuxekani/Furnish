@@ -1,8 +1,8 @@
 <div class="col-md-12">
-  <div class="card card-container">
+  <div class="container">
     <img
       id="profile-img"
-      src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+      src="../assets/1.jpg"
       class="profile-img-card"
     />
     <form
@@ -47,9 +47,8 @@
         </div>
       </div>
       <div class="form-group">
-        <button class="btn btn-primary btn-block">
-          Login
-        </button>
+        <button type="submit" class="btn btn-primary" routerLink="/login">Login</button>
+        <p>Do not have an account? <a href="register">Register</a></p>
       </div>
       <div class="form-group">
         <div *ngIf="f.submitted && isLoginFailed" class="alert alert-danger" role="alert">
