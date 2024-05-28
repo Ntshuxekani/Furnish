@@ -32,7 +32,7 @@ import { FooterComponent } from './components/footer/footer.component';
     registerComponent,
     SucessComponent,
     PaymentComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
