@@ -1,6 +1,9 @@
 import { Component, Input, OnInit} from '@angular/core';
+import { Subscription } from 'rxjs';
 import { CartService } from 'src/app/Carts/cart.service';
+import { EventBusService } from 'src/app/event-bus.service';
 import { AuthService } from 'src/app/services/checkout/authantication/auth.service';
+import { StorageService } from 'src/app/storage.service';
 
 
 
@@ -10,6 +13,11 @@ import { AuthService } from 'src/app/services/checkout/authantication/auth.servi
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent  implements OnInit{
+username?: string;
+showAdminBoard = false;
+private roles: string[] = [];
+showSupplierBoard= false;
+eventBusSub?: Subscription;
 
 navigateHome() {
 throw new Error('Method not implemented.');
@@ -19,26 +27,49 @@ throw new Error('Method not implemented.');
   router: any;
 
   constructor(private cartService: CartService,
-              private authService: AuthService) {}
+              private authService: AuthService, private storageService: StorageService,   private eventBusService: EventBusService) {}
   
 
   ngOnInit() {
     // this.cartService.getCartItemCount().subscribe((count: number) => {
     //   this.cartItemCount = count;
     //  });
+   this.isLoggedIn= this.storageService.isLoggedIn();
     this.cartItemCount = this.cartService.getCartItemCount();
-     this.isLoggedIn = this.authService.getIsLoggedIn();
+    
+    if (this.isLoggedIn) {
+      const user = this.storageService.getUser();
+      this.roles = user.roles;
 
-   
+      this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
+      this.showSupplierBoard = this.roles.includes('ROLE_SUPPLIER');
+
+      this.username = user.username;
     }
-  
-    logout() {
-      this.authService.logout(); 
-      this.isLoggedIn = false; 
-      this.router.navigate(['/home']);
-      
-    }
+    this.eventBusSub = this.eventBusService.on('logout', () => {
+      this.logout();
+    });
   }
+   
+    
+  
+ 
+  logout(): void {
+    this.authService.logout().subscribe({
+      next: res => {
+        console.log(res);
+        this.storageService.clean();
+        this.router('/home ')
+      window.location.reload();
+      },
+      error: err => {
+        console.log(err);
+      }
+    });
+  }
+}
+
+  
 
   
 

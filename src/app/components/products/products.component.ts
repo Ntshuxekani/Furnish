@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { ProductsService } from 'src/app/APIs/products.service';
+//import { ProductsService } from 'src/app/APIs/products.service';
 import { CartService } from 'src/app/Carts/cart.service';
 import { AuthService } from 'src/app/services/checkout/authantication/auth.service';
 import { Router } from '@angular/router';
+import { ProductsService } from 'src/app/APIs/products.service';
 
 
 @Component({
