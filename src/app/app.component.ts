@@ -11,14 +11,9 @@ import { EventBusService } from './event-bus.service';
 })
 export class AppComponent {
   title = 'FurnishUp';
-  private roles: string[] = [];
-  isLoggedIn = false;
-  showAdminBoard = false;
 
-showSupplierBoard= false;
-eventBusSub?: Subscription;
 
-  constructor(private storageService: StorageService, private authService: AuthService,  private eventBusService: EventBusService) { }
+  constructor() { }
 
   ngOnInit(): void {
     

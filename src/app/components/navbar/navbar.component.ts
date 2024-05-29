@@ -1,9 +1,10 @@
-import { Component, Input, OnInit} from '@angular/core';
+import { Component, HostListener, Input, OnInit} from '@angular/core';
 import { Subscription } from 'rxjs';
 import { CartService } from 'src/app/Carts/cart.service';
 import { EventBusService } from 'src/app/event-bus.service';
 import { AuthService } from 'src/app/services/checkout/authantication/auth.service';
 import { StorageService } from 'src/app/storage.service';
+
 
 
 
@@ -58,9 +59,11 @@ throw new Error('Method not implemented.');
     this.authService.logout().subscribe({
       next: res => {
         console.log(res);
+        window.sessionStorage.clear();
+        localStorage.clear()
         this.storageService.clean();
-        this.router('/home ')
-      window.location.reload();
+        this.router('/home')
+   window.location.reload();
       },
       error: err => {
         console.log(err);
