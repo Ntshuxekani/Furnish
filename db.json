@@ -40,8 +40,8 @@
     {
       "id": "3",
       "title": "Dreams bed",
-      "price2": 5000,
-      "price": 3964.99,
+      "price": 5000,
+      "d_price": 3964.99,
       "image": "assets/images/1000_F_388910352_p0LOpB3YJVwRahbMcBKiuIPjlKTpZZRE.jpg",
       "category": "furniture",
       "description": "Experience luxury with the Dreams bed. Its plush upholstery and sturdy construction ensure a restful night's sleep every time."
@@ -49,8 +49,8 @@
     {
       "id": "4",
       "title": "Comfy Sleep",
-      "price2": 3300,
-      "price": 2700,
+      "price": 3300,
+      "d_price": 2700,
       "image": "assets/images/1000_F_492904673_hrQrz779pw3er4IraG0zmQA8TaeR88JL.jpg",
       "category": "furniture",
       "description": "Sink into the Comfy Sleep bed and experience ultimate relaxation. Its ergonomic design and soft cushions provide unparalleled comfort."
@@ -58,8 +58,8 @@
     {
       "id": "5",
       "title": "green velvet",
-      "price": 789.99,
-      "price2": 1000,
+      "d_price": 789.99,
+      "price": 1000,
       "image": "assets/images/1000_F_298830220_lHqS0oOJMOZ8F8ld7z7ZeAdZDv1Gt02U.jpg",
       "category": "furniture",
       "description": "Add a touch of elegance to your home with chair 1. Its stylish design and premium materials make it a versatile choice for any room."

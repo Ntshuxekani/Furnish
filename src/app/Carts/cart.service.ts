@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CartService {
 
-  private apiUrl = 'http://localhost:3000/cartItems';
+  private apiUrl = 'http://localhost:8080/api/FurnishUp/CartOrders';
   
   private cart: any[] = []
 
