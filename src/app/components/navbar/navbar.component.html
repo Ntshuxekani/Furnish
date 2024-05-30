@@ -60,4 +60,87 @@
       <li>{{ isLoggedIn ? 'Logout' : 'Login' }}</li>
     </a>
   </ul>
+</nav><!-- <nav class="navbar navbar-expand-lg fixed-top" style="background-color:orange;">
+
+  <div class="container-fluid">
+    <a onClick="navigateHome()" href="#" routerLink="/home"><img src="../assets/1.jpg" /></a>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <img class="navbar-brand me-auto" src="../assets/1.jpg" alt="...">
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link mx-lg-2 active" aria-current="page" href="#" routerLink="/home"></a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link mx-lg-2" href="#" routerLink="/cart" routerLinkActive="active"><i
+                class="bi bi-cart-check-fill icons"><span
+                  class="badge bg-secondary badge">{{cartItemCount}}</span></i></a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+      <div>
+        <a href="#" class="login-button" routerLink="/login" *ngIf="!isLoggedIn">Log In</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      </div>
+    </div>
+</nav> -->
+
+<nav class="{{isLoggedIn ? 'light' : ''}}">
+  <a href="/home">
+    <img src="../assets/1.jpg" alt="logo">
+  </a>
+
+  <ul>
+    <a href="/home">
+      <li>Home</li>
+    </a>
+    <a href="/home#products">
+      <li>Products</li>
+    </a>
+    <a routerLink="/footer" routerLinkActive="active" href="#">
+      <li>Contact Us</li>
+    </a>
+    <a href="#" routerLink="/cart" routerLinkActive="active">
+      <li>
+        <i class="bi bi-cart-check-fill icons">
+          <span class="badge bg-secondary badge">{{cartItemCount}}</span>
+        </i>
+      </li>
+    </a>
+    <!-- <a>{{username}}  </a>
+
+    <a href="/login" class="login-btn">
+    
+      <li>{{ isLoggedIn ? 'Logout' : 'Login' }}</li>
+     
+    </a> -->
+    <ul  *ngIf="!isLoggedIn">
+      <li class="login-btn badge bg-secondary badge">
+        <a href="/register" class="nav-link" routerLink="/register">Sign Up</a>
+      </li>
+      <li class="login-btn login-btn badge bg-secondary badge" >
+        <a href="#" class="nav-link" routerLink="/login">Login</a>
+      </li>
+    </ul>
+
+    <ul  *ngIf="isLoggedIn">
+      <li class="login-btn login-btn badge bg-secondary badge" >
+        <a href="/profile" class="nav-link" routerLink="/profile"></a>
+      </li>
+      <li class="login-btn login-btn badge bg-secondary badge">
+        <a href class="nav-link" (click)="logout()">LogOut</a>
+      </li>
+    </ul>
+    
+  </ul>
 </nav>
