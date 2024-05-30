@@ -20,8 +20,8 @@ export class ProductsService {
     return this.http.get<any>(this.apiUrl);
   }
   //fetch one products 
-  getProduct(id:number = 1): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/?id=${id}`);
+  getProduct(id: number = 1): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${id}`);
   }
 
   //post a product

@@ -13,7 +13,7 @@ export class registerComponent {
  
   //signup will be a formgroup object
   public Register !: FormGroup
- api="http://localhost:3000/registerUsersList/"
+  api="http://localhost:3000/registerUsersList/"
   constructor( private formbuilder: FormBuilder,private http: HttpClient, private router: Router){}
 
   ngOnInit():void
@@ -46,7 +46,7 @@ export class registerComponent {
       alert('sign up successful');
       //the navigator method accepts an array of route as an argument
       this.Register.reset()
-      this.router.navigate(["/products"])
+      this.router.navigate(["/login"])
     },error=>{
         alert("something went wrong");
 
