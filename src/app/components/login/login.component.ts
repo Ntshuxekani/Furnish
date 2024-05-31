@@ -21,11 +21,12 @@ import { StorageService } from 'src/app/storage.service';
     errorMessage = '';
     roles: string[] = [];
   
-    constructor(private authService: AuthService, private storageService: StorageService) { }
+    constructor(private authService: AuthService, private storageService: StorageService, private router: Router) { }
   
     ngOnInit(): void {
       if (this.storageService.isLoggedIn()) {
         this.isLoggedIn = true;
+      
         this.roles = this.storageService.getUser().roles;
       }
     }
@@ -40,6 +41,7 @@ import { StorageService } from 'src/app/storage.service';
           this.isLoginFailed = false;
           this.isLoggedIn = true;
           this.roles = this.storageService.getUser().roles;
+        
           this.reloadPage();
         },
         error: err => {
@@ -47,6 +49,10 @@ import { StorageService } from 'src/app/storage.service';
           this.isLoginFailed = true;
         }
       });
+    }
+
+    navigateToCart(): void {
+      this.router.navigate(['/cart']);
     }
 
     reloadPage(): void {

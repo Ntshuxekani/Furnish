@@ -34,7 +34,7 @@ export class CartComponent implements OnInit {
     }
     if (!this.authService.getIsLoggedIn()) {
 
-      this.router.navigate(['/login']);
+      this.router.navigate(['/cart']);
     }
     // this.subTotal = this.cartService.getTotalPrice();
   }
