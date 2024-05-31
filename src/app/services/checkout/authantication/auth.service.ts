@@ -1,26 +1,45 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment.development';
+
+const AUTH_API = environment.api;
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+  withCredentials: true // This is the important part
+};
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
   private loggedIn: boolean = false;
   private loggedInEmail: string = '';
+  constructor(private http: HttpClient) {}
 
-  constructor() { }
-  login(email: string): void {
-    this.loggedIn = true;
-    this.loggedInEmail = email;
-    localStorage.setItem('loggedInEmail', email);
+  login(username: string, password: string): Observable<any> {
+    return this.http.post(
+      AUTH_API + '/auth/signin',
+      {
+        username,
+        password,
+      },
+      httpOptions
+    );
   }
 
-  
-  logout(): void {
-    this.loggedIn = false;
-    this.loggedInEmail = '';
-    localStorage.removeItem('loggedInEmail');
-     }
-
+  register(username: string, email: string, password: string): Observable<any> {
+    return this.http.post(
+      AUTH_API + '/auth/signup',
+      {
+        username,
+        email,
+        password,
+      },
+      httpOptions
+    );
+  }
   getIsLoggedIn(): boolean {
     return this.loggedIn;
   }
@@ -28,11 +47,7 @@ export class AuthService {
   getLoggedInEmaiil(): string {
     return this.loggedInEmail;
   }
-
-  initAuth():void {
-    const userEmail = localStorage.getItem('loggedInEmail');
-    if(userEmail) {
-      this.login(userEmail);
-    }
+  logout(): Observable<any> {
+    return this.http.post(AUTH_API + '/auth/signout', { }, httpOptions);
   }
 }

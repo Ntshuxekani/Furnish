@@ -33,7 +33,7 @@
     </div>
 </nav> -->
 
-<nav>
+<nav class="{{isLoggedIn ? 'light' : ''}}">
   <a href="/home">
     <img src="../assets/1.jpg" alt="logo">
   </a>
@@ -55,9 +55,30 @@
         </i>
       </li>
     </a>
+    <!-- <a>{{username}}  </a>
 
     <a href="/login" class="login-btn">
+    
       <li>{{ isLoggedIn ? 'Logout' : 'Login' }}</li>
-    </a>
+     
+    </a> -->
+    <ul  *ngIf="!isLoggedIn">
+      <li class="login-btn badge bg-secondary badge">
+        <a href="/register" class="nav-link" routerLink="/register">Sign Up</a>
+      </li>
+      <li class="login-btn login-btn badge bg-secondary badge" >
+        <a href="#" class="nav-link" routerLink="/login">Login</a>
+      </li>
+    </ul>
+
+    <ul  *ngIf="isLoggedIn">
+      <li class="login-btn login-btn badge bg-secondary badge" >
+        <a href="/profile" class="nav-link" routerLink="/profile">{{ username }}</a>
+      </li>
+      <li class="login-btn login-btn badge bg-secondary badge">
+        <a href class="nav-link" (click)="logout()">LogOut</a>
+      </li>
+    </ul>
+    
   </ul>
 </nav>
