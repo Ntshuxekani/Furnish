@@ -48,5 +48,8 @@
     transition: all 0.3s ease;
     opacity: 0.9;
   }
- 
+ img {
+  height: 300px;
+  object-fit: cover;
+ }
   
