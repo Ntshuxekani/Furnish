@@ -4,6 +4,8 @@
     border-radius: 50%;
     margin: auto;
     margin-top: 0;
+    margin-left: 10px;
+
 }
 .logo
 {
@@ -15,23 +17,24 @@
 .btn{
     background-color: transparent;
     color: var(--primary-color);
-   margin-left: 41%;
+   margin-left: 25%;
    border: 3px solid var(--primary-color);
    padding: 10px 40px 10px 40px;
    font-weight: bolder;
+   margin-top: 20px;
 }
 
 .container{
     background-color:white;
-     width: 40%;
-     height:600px;
+     width: 27%;
+     height:490px;
      overflow: hidden;
      padding:20px;
      padding-top: 0;
      margin: auto;
      border-radius: 17px;
     border:1px solid;
-    margin-top:10px;
+    margin-top:150px;
    }
    input {
     font-weight: 100;
@@ -51,4 +54,8 @@ label{
 a{
     color: var(--primary-color);
     
+}
+
+img {
+    margin-left: 22%;
 }

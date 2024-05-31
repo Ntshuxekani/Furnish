@@ -16,12 +16,12 @@ export class ProductDetailComponent implements OnInit{
   constructor(private activatedRoute: ActivatedRoute, private productsService: ProductsService, private cartService: CartService){
 
   }
-  product:any;
+  product: any  = [];
   ngOnInit(): void {
 
      this.activatedRoute.paramMap.subscribe((params: ParamMap) =>{
       this.productsService.getProduct(+params.get('id')!).subscribe((response: any)=>{
-        this.product = response;
+        this.product.push(response);
         console.log(this.product)
       })
      })

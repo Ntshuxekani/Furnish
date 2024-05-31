@@ -11,7 +11,7 @@ import { PaymentComponent } from './components/payment/payment.component';
 
 const Routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'products', component: ProductsComponent },
+  { path: 'products', redirectTo: '/home', pathMatch: 'full' },
   { path: 'checkout', component: CheckoutComponent },
   { path: 'product/:id', component: ProductDetailComponent },
   { path: 'cart', component: CartComponent },

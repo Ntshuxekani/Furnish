@@ -50,6 +50,8 @@ throw new Error('Method not implemented.');
     this.eventBusSub = this.eventBusService.on('logout', () => {
       this.logout();
     });
+
+    console.log(this.isLoggedIn);
   }
    
     

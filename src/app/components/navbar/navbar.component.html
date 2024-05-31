@@ -48,7 +48,7 @@
     <a routerLink="/footer" routerLinkActive="active" href="#">
       <li>Contact Us</li>
     </a>
-    <a href="#" routerLink="/cart" routerLinkActive="active">
+    <a href="#" [routerLink]="isLoggedIn ? '/cart' : '/login'" routerLinkActive="active">
       <li>
         <i class="bi bi-cart-check-fill icons">
           <span class="badge bg-secondary badge">{{cartItemCount}}</span>

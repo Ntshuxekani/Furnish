@@ -17,7 +17,7 @@
     place-items: center;
     background-color:rgb(242, 234, 234);
     border-radius: 17px;
-    border:1px solid red;
+    //border:1px solid black;
     width: 30%;
     height: fit-content;
     overflow: hidden;
@@ -25,7 +25,7 @@
     padding-top: 0;
     margin: auto;
     border-radius: 17px;
-    margin-top: 30px;
+    margin-top: 150px;
    
 
 }
@@ -40,7 +40,7 @@ h2{
 button{
     background-color: transparent;
     color: var(--primary-color);
-   margin-left:30%;
+   margin-left:23%;
    border: 3px solid var(--primary-color);
    padding: 10px 40px 10px 40px;
    font-weight: bolder;
