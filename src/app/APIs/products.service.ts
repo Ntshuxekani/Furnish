@@ -6,7 +6,7 @@ import { environment } from 'src/environments/environment.development';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
-  withCredentials: true // This is the important part
+ // withCredentials: true // This is the important part
 };
 @Injectable({
   providedIn: 'root'
